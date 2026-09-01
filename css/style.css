@@ -1078,119 +1078,165 @@ body.modal-open{overflow:hidden}
   box-sizing:border-box !important;
 }
 
-/* --- v6.11 부산진구 병원개원 section --- */
-.clinic-opening{
+/* --- v6.13 hero readability --- */
+.hero-copy>p:not(.eyebrow){
+  font-size:16px !important;
+  line-height:1.8 !important;
+}
+.hero .actions .btn{
+  font-size:11px !important;
+  padding:15px 24px !important;
+}
+.hero .actions{
+  gap:12px !important;
+}
+
+/* --- v6.13 insights page --- */
+.insights-page{
   background:#f4f1ea;
   color:#171717;
-  padding:110px 0;
 }
-.clinic-opening-head{
+.insights-header{
+  background:#0d1623;
+}
+.insights-header nav a.active{
+  color:#c8a77b;
+}
+.insights-hero{
+  background:#0d1623;
+  color:#fff;
+  padding:170px 0 110px;
+}
+.insights-hero h1{
+  font:400 86px/1 Georgia,serif;
+  margin:10px 0 24px;
+}
+.insights-hero>div>p:last-child{
+  font-size:15px;
+  line-height:1.9;
+  color:#c8ced4;
+}
+.insights-section{
+  padding:100px 0 110px;
+}
+.insights-head{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:70px;
+  gap:60px;
   align-items:end;
-  margin-bottom:54px;
+  margin-bottom:46px;
 }
-.clinic-opening-head h2{
-  font:400 46px/1.15 Georgia,serif;
+.insights-head h2{
+  font:400 45px/1.15 Georgia,serif;
   margin:8px 0 0;
 }
-.clinic-opening-head>p{
+.insights-head>p{
   margin:0;
+  color:#6d675f;
   font-size:13px;
-  line-height:1.9;
-  color:#6e675f;
-  max-width:600px;
+  line-height:1.8;
 }
-.clinic-opening-grid{
+.insights-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid #cfc7bc;
-  border-bottom:1px solid #cfc7bc;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
-.clinic-opening-grid article{
-  padding:30px 24px 32px;
-  border-right:1px solid #d7d0c6;
+.insight-card{
+  background:#fff;
+  border:1px solid #ded7cc;
+  border-radius:14px;
+  padding:28px;
+  min-height:255px;
+  display:flex;
+  flex-direction:column;
 }
-.clinic-opening-grid article:last-child{border-right:0}
-.clinic-opening-grid span{
-  display:block;
-  font:italic 24px Georgia,serif;
-  color:#7a2e3a;
+.insight-card>span{
+  font-size:8px;
+  letter-spacing:.16em;
+  color:#8f8274;
   margin-bottom:18px;
 }
-.clinic-opening-grid h3{
-  font-size:16px;
-  margin:0 0 12px;
+.insight-card h3{
+  font:400 24px/1.25 Georgia,serif;
+  margin:0 0 14px;
 }
-.clinic-opening-grid p{
-  margin:0;
+.insight-card p{
+  margin:0 0 24px;
   font-size:12px;
   line-height:1.8;
-  color:#6c665f;
+  color:#6e685f;
+  flex:1;
 }
-.clinic-opening-note{
-  margin-top:34px;
-  background:#fff;
-  border:1px solid #ddd6cc;
-  border-radius:14px;
-  padding:24px 26px;
-  display:grid;
-  grid-template-columns:.5fr 1.5fr auto;
-  gap:24px;
+.insight-card a{
+  font-size:9px;
+  letter-spacing:.13em;
+  color:#8f8f8f;
+  text-decoration:none;
+}
+.insights-cta{
+  margin-top:36px;
+  background:#7a2e3a;
+  color:#fff;
+  border-radius:16px;
+  padding:30px 32px;
+  display:flex;
   align-items:center;
+  justify-content:space-between;
+  gap:28px;
 }
-.clinic-opening-note small{
+.insights-cta small{
   display:block;
   font-size:8px;
   letter-spacing:.16em;
-  color:#9a9085;
-  margin-bottom:5px;
+  color:#e6b7bf;
+  margin-bottom:7px;
 }
-.clinic-opening-note strong{
-  font:400 23px Georgia,serif;
+.insights-cta h3{
+  font:400 27px Georgia,serif;
+  margin:0 0 8px;
 }
-.clinic-opening-note p{
+.insights-cta p{
   margin:0;
-  font-size:11px;
-  line-height:1.7;
-  color:#756e66;
+  font-size:12px;
+  color:#ead9dc;
 }
-.clinic-cta{
-  border:0;
-  background:#7a2e3a;
-  color:#fff;
-  padding:14px 18px;
+.insights-cta>a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:130px;
+  height:46px;
   border-radius:8px;
+  background:#fff;
+  color:#7a2e3a;
+  text-decoration:none;
   font-size:12px;
   font-weight:700;
-  cursor:pointer;
-  white-space:nowrap;
 }
-.clinic-cta:hover{background:#672631}
+.simple-footer{
+  background:#0d1623;
+  color:#fff;
+  padding:34px 0;
+}
+.simple-footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+.simple-footer strong,
+.simple-footer span{
+  font:400 20px Georgia,serif;
+}
 
 @media(max-width:980px){
-  .clinic-opening-head{grid-template-columns:1fr;gap:24px}
-  .clinic-opening-grid{grid-template-columns:repeat(2,1fr)}
-  .clinic-opening-grid article:nth-child(2){border-right:0}
-  .clinic-opening-grid article:nth-child(-n+2){border-bottom:1px solid #d7d0c6}
-  .clinic-opening-note{grid-template-columns:1fr}
-  .clinic-cta{width:100%}
+  .insights-head{grid-template-columns:1fr}
+  .insights-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:600px){
-  .clinic-opening{padding:75px 0}
-  .clinic-opening-head h2{font-size:36px}
-  .clinic-opening-grid{grid-template-columns:1fr}
-  .clinic-opening-grid article{
-    border-right:0;
-    border-bottom:1px solid #d7d0c6;
-    padding:24px 4px;
-  }
-  .clinic-opening-grid article:last-child{border-bottom:0}
-}
-
-/* v6.12: 부산진구 병원개원 섹션 제거 */
-#clinic-opening,
-.clinic-opening{
-  display:none !important;
+@media(max-width:700px){
+  .hero-copy>p:not(.eyebrow){font-size:14px !important}
+  .insights-hero{padding:130px 0 80px}
+  .insights-hero h1{font-size:58px}
+  .insights-grid{grid-template-columns:1fr}
+  .insights-cta{flex-direction:column;align-items:flex-start}
+  .insights-cta>a{width:100%}
 }
