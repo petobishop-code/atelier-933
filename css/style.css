@@ -1325,3 +1325,25 @@ body.modal-open{overflow:hidden}
   .clinic-bottom-cta .wrap{flex-direction:column;align-items:flex-start}
   .clinic-bottom-cta a{width:100%}
 }
+
+/* --- v6.18 entire first INSIGHTS card clickable --- */
+.insight-card-link{
+  text-decoration:none !important;
+  color:inherit !important;
+  cursor:pointer !important;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease !important;
+}
+.insight-card-link:hover{
+  transform:translateY(-4px) !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.09) !important;
+  border-color:#b9aa98 !important;
+}
+.insight-card-link .card-link-label{
+  display:inline-flex !important;
+  align-items:center !important;
+  margin-top:auto !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  letter-spacing:.12em !important;
+  color:#7a2e3a !important;
+}
