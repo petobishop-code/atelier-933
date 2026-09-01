@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1623"><title>ATELIER 933 | 양정의 새로운 라이프스타일</title><meta name="description" content="ATELIER 933. 부산 양정의 주거·상업 복합 라이프스타일 공간. 프로젝트, Avenue 933, 공간 안내와 관심고객 등록 정보를 확인하세요."><link rel="preload" as="image" href="images/hero.webp"><link rel="stylesheet" href="css/style.css"></head><body>
-<header class="site-header" id="header"><a class="brand" href="#top">ATELIER 933</a><nav><a href="#project">PROJECT</a><a href="#location">LOCATION</a><a href="#avenue">AVENUE 933</a><a href="#value">COMMERCIAL VALUE</a><a href="#floor">FLOOR GUIDE</a><a href="#gallery">GALLERY</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a></nav><a class="header-cta" href="#contact">관심고객 등록</a><button class="menu-btn" aria-label="메뉴"><span></span><span></span></button></header>
+<header class="site-header" id="header"><a class="brand" href="#top">ATELIER 933</a><nav><a href="#project">PROJECT</a><a href="#location">LOCATION</a><a href="#avenue">AVENUE 933</a><a href="#value">COMMERCIAL VALUE</a><a href="#floor">FLOOR GUIDE</a><a href="#gallery">GALLERY</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a></nav><button type="button" class="header-cta open-modal-btn" data-modal="interestModal">관심고객 등록</button><button class="menu-btn" aria-label="메뉴"><span></span><span></span></button></header>
 <div class="mobile-menu">
   <a href="#project">PROJECT</a>
   <a href="#location">LOCATION</a>
@@ -11,7 +11,7 @@
   <a href="#contact">CONTACT</a>
 </div>
 <main id="top">
-<section class="hero"><img src="images/hero.webp" alt="아틀리에 933 외관 조감도"><div class="shade"></div><div class="hero-copy wrap"><p class="eyebrow">ATELIER 933 · YANGJEONG</p><h1>A NEW STANDARD<br>OF URBAN LIVING</h1><p>도시의 흐름과 일상의 감각이 만나는 곳,<br>양정에서 새로운 라이프스타일을 시작합니다.</p><div class="actions"><a class="btn light" href="#project">PROJECT VIEW</a><a class="btn glass" href="#contact">관심고객 등록</a></div></div></section>
+<section class="hero"><img src="images/hero.webp" alt="아틀리에 933 외관 조감도"><div class="shade"></div><div class="hero-copy wrap"><p class="eyebrow">ATELIER 933 · YANGJEONG</p><h1>A NEW STANDARD<br>OF URBAN LIVING</h1><p>도시의 흐름과 일상의 감각이 만나는 곳,<br>양정에서 새로운 라이프스타일을 시작합니다.</p><div class="actions"><a class="btn light" href="#project">PROJECT VIEW</a><button type="button" class="btn glass open-modal-btn" data-modal="interestModal">관심고객 등록</button></div></div></section>
 <section class="stats wide"><article><span>01</span><b>YANGJEONG STATION</b><p>양정역 생활권을 누리는 도심 입지</p></article><article><span>02</span><b>230 RESIDENCES</b><p>공동주택 72세대 · 오피스텔 158호</p></article><article><span>03</span><b>MIXED USE</b><p>주거와 상업이 연결되는 복합 라이프</p></article><article><span>04</span><b>AVENUE 933</b><p>새로운 일상을 채우는 상업 공간</p></article></section>
 <section id="project" class="dark section">
   <div class="wrap project-grid">
@@ -236,6 +236,31 @@
 
 
 
+
+<aside class="floating-contact" aria-label="빠른 상담">
+  <a class="floating-phone" href="tel:01094698957">
+    <small>CALL</small>
+    <strong>010-9469-8957</strong>
+    <span>전화 상담 바로 연결</span>
+  </a>
+
+  <button type="button" class="floating-action consult open-modal-btn" data-modal="consultModal">
+    <span class="floating-icon">✎</span>
+    <span>
+      <small>CONTACT</small>
+      <strong>상담 신청</strong>
+    </span>
+  </button>
+
+  <button type="button" class="floating-action register open-modal-btn" data-modal="interestModal">
+    <span class="floating-icon">★</span>
+    <span>
+      <small>REGISTER</small>
+      <strong>관심고객 등록</strong>
+    </span>
+  </button>
+</aside>
+
 <div class="modal-backdrop" id="consultModal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="consultTitle">
     <button type="button" class="modal-close" aria-label="닫기">×</button>
@@ -244,6 +269,12 @@
       <h3 id="consultTitle">상담 문의</h3>
       <p>담당자가 확인 후 연락드립니다. 편하신 시간대를 선택해 주세요.</p>
     </div>
+
+    <a class="modal-phone-link" href="tel:01094698957">
+      <span>전화로 바로 상담하기</span>
+      <strong>010-9469-8957</strong>
+    </a>
+
 
     <form class="avenue-modal-form" data-form-type="상담문의">
       <label><b>성함</b><input type="text" name="name" placeholder="홍길동" required></label>
