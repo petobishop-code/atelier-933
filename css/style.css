@@ -129,3 +129,77 @@
   .floor-side{grid-template-columns:1fr}
   .floor-side article{min-height:260px}
 }
+
+/* --- v5 content expansion --- */
+.value-section{padding:112px 0;background:#f1eee7}
+.value-head{display:grid;grid-template-columns:1fr .7fr;column-gap:70px;align-items:end;margin-bottom:46px}
+.value-head .eyebrow{grid-column:1/-1}
+.value-head h2{font:400 48px/1.14 Georgia,serif;letter-spacing:-.04em;margin:0}
+.value-head>p:last-child{font-size:13px;line-height:1.8;color:#6f6b64;margin:0 0 4px}
+.value-grid{display:grid;grid-template-columns:1.2fr repeat(3,1fr);border-top:1px solid #cfc8bd;border-bottom:1px solid #cfc8bd}
+.value-grid article{min-height:285px;padding:28px;border-right:1px solid #cfc8bd;display:flex;flex-direction:column}
+.value-grid article:last-child{border-right:0}
+.value-grid .value-number{background:#111820;color:#fff}
+.value-number span{font:58px Georgia,serif;letter-spacing:-.04em}
+.value-number small{font-size:8px;letter-spacing:.16em;color:#9aa4ad;margin:8px 0 auto}
+.value-grid em{font:26px Georgia,serif;color:#9a9184;font-style:normal;margin-bottom:auto}
+.value-grid h3{font-size:11px;letter-spacing:.11em;margin:24px 0 10px}
+.value-grid p{font-size:12px;line-height:1.7;color:#68645e;margin:0}
+.value-number p{color:#b8c0c6}.value-number h3{font-family:Georgia,serif;font-size:19px;letter-spacing:0}
+.value-note,.potential-note{font-size:10px;color:#8a847b;margin-top:16px}
+
+.design-detail{padding-top:115px;padding-bottom:115px}
+.design-head h2{font:400 47px/1.14 Georgia,serif;letter-spacing:-.04em;margin:0 0 50px}
+.design-list{border-top:1px solid #303944}
+.design-list article{display:grid;grid-template-columns:80px .85fr 1.15fr;gap:35px;align-items:center;padding:26px 0;border-bottom:1px solid #303944}
+.design-num{font:29px Georgia,serif;color:#8d99a5}
+.design-list h3{font-size:11px;letter-spacing:.13em;margin:0 0 12px}
+.design-list p{font-size:13px;line-height:1.8;color:#aab3ba;margin:0;max-width:480px}
+.design-list img{height:230px}
+
+.potential{background:#fff}
+.potential-head{display:flex;justify-content:space-between;align-items:flex-end;gap:70px;margin-bottom:42px}
+.potential-head h2{margin:0}
+.potential-head>p{max-width:430px;margin:0 0 4px;font-size:13px;line-height:1.8;color:#706c66}
+.potential-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.potential-grid article{padding:28px 24px;background:#f3f0e9;min-height:220px}
+.potential-grid span{font:23px Georgia,serif;color:#9e9589}
+.potential-grid h3{font-size:11px;letter-spacing:.12em;margin:42px 0 10px}
+.potential-grid p{font-size:12px;line-height:1.7;color:#68645f;margin:0}
+
+.faq-section{padding-top:112px;padding-bottom:112px}
+.faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:90px}
+.faq-title h2{font:400 45px/1.15 Georgia,serif;letter-spacing:-.04em;margin:0 0 22px}
+.faq-title>p:last-child{font-size:12px;line-height:1.8;color:#929da6}
+.faq-list{border-top:1px solid #303943}
+.faq-list details{border-bottom:1px solid #303943;padding:0}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-size:13px;color:#eef2f4}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary span{font:18px Georgia,serif;color:#8c99a4;transition:.25s}
+.faq-list details[open] summary span{transform:rotate(45deg)}
+.faq-list details p{font-size:12px;line-height:1.8;color:#a7b0b7;margin:0;padding:0 55px 24px 0}
+
+@media(max-width:1050px){
+  .value-grid{grid-template-columns:1fr 1fr}
+  .value-grid article:nth-child(2){border-right:0}
+  .value-grid article:nth-child(-n+2){border-bottom:1px solid #cfc8bd}
+  .design-list article{grid-template-columns:60px 1fr}
+  .design-list img{grid-column:1/-1;height:320px}
+  .potential-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .value-head,.potential-head{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+  .faq-layout{grid-template-columns:1fr;gap:35px}
+}
+@media(max-width:600px){
+  .value-section,.design-detail,.faq-section{padding-top:78px;padding-bottom:78px}
+  .value-head h2,.design-head h2,.faq-title h2{font-size:35px}
+  .value-grid{grid-template-columns:1fr}
+  .value-grid article,.value-grid article:nth-child(2){border-right:0;border-bottom:1px solid #cfc8bd}
+  .value-grid article:last-child{border-bottom:0}
+  .value-grid article{min-height:210px}
+  .design-list article{grid-template-columns:48px 1fr;gap:18px}
+  .design-list img{height:245px}
+  .potential-grid{grid-template-columns:1fr}
+  .potential-grid article{min-height:185px}
+}
