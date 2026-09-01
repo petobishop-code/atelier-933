@@ -1188,3 +1188,9 @@ body.modal-open{overflow:hidden}
   }
   .clinic-opening-grid article:last-child{border-bottom:0}
 }
+
+/* v6.12: 부산진구 병원개원 섹션 제거 */
+#clinic-opening,
+.clinic-opening{
+  display:none !important;
+}
