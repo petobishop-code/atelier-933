@@ -251,3 +251,14 @@
  .floor-copy h3{font-size:29px}
  .floor-image{min-height:280px}
 }
+
+/* --- v6.2 final cleanup --- */
+.gallery-head>p{
+  max-width:420px;
+  font-size:13px;
+  line-height:1.85;
+  color:#9da7b0;
+}
+.mobile-menu a{
+  letter-spacing:.04em;
+}
