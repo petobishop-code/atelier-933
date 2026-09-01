@@ -195,10 +195,111 @@
     </div>
   </div>
 </section>
-<section id="contact" class="contact section contact-redesign">
-  <div class="wrap contact-grid">
-    <div class="contact-copy reveal"><p class="eyebrow">CONTACT</p><h2>AVENUE 933에<br>관심을 남겨주세요</h2><p class="copy darkcopy">상가 분양·임대와 공간 관련 상담을 위한 문의 채널을 준비하고 있습니다.</p></div>
-    <div class="contact-cards reveal"><article><span>01</span><small>COMMERCIAL INQUIRY</small><strong>상가 문의 준비중</strong></article><article><span>02</span><small>REGISTER</small><strong>관심고객 등록 준비중</strong></article><a class="contact-top" href="#top">BACK TO TOP <i>↑</i></a></div>
+<section id="contact" class="contact section contact-form-section">
+  <div class="wrap contact-form-layout">
+    <div class="contact-intro reveal">
+      <p class="eyebrow">CONTACT</p>
+      <h2>AVENUE 933<br>상가 상담 신청</h2>
+      <p class="copy darkcopy">상가 분양·임대 및 공간 관련 문의를 남겨주시면 확인 후 연락드리겠습니다.</p>
+
+      <div class="contact-phone-card">
+        <small>COMMERCIAL INQUIRY</small>
+        <a href="tel:01094698957">010-9469-8957</a>
+        <p>전화 상담이 필요하시면 위 번호를 눌러 바로 연결하실 수 있습니다.</p>
+      </div>
+    </div>
+
+    <form id="avenueContactForm" class="avenue-contact-form reveal">
+      <div class="form-title">
+        <span>Contact</span>
+        <h3>상담 신청</h3>
+        <p>담당자가 확인 후 연락드립니다. 편하신 시간대를 선택해 주세요.</p>
+      </div>
+
+      <label>
+        <b>성함</b>
+        <input type="text" id="contactName" name="name" placeholder="홍길동" required>
+      </label>
+
+      <label>
+        <b>연락처</b>
+        <input type="tel" id="contactPhone" name="phone" placeholder="010-0000-0000" inputmode="tel" required>
+      </label>
+
+      <fieldset class="time-field">
+        <legend>연락 가능한 시간대</legend>
+        <div class="time-options">
+          <input type="radio" name="time" id="time1" value="오전 9~12시" checked>
+          <label for="time1">오전 9~12시</label>
+
+          <input type="radio" name="time" id="time2" value="오후 12~15시">
+          <label for="time2">오후 12~15시</label>
+
+          <input type="radio" name="time" id="time3" value="오후 15~18시">
+          <label for="time3">오후 15~18시</label>
+
+          <input type="radio" name="time" id="time4" value="저녁 18시 이후">
+          <label for="time4">저녁 18시 이후</label>
+
+          <input type="radio" name="time" id="time5" value="아무때나">
+          <label for="time5">아무때나</label>
+        </div>
+      </fieldset>
+
+      <div class="privacy-box">
+        <b>개인정보 수집·이용 동의</b>
+        <p>· 수집 항목: 성함, 연락처, 연락 가능한 시간대</p>
+        <p>· 이용 목적: 상가 분양·임대 상담 안내</p>
+        <p>· 보유 기간: 상담 종료 시 또는 동의 철회 시 지체 없이 파기</p>
+        <label class="agree-row">
+          <input type="checkbox" id="privacyAgree" required>
+          <span>위 내용을 확인하였으며 수집·이용에 동의합니다.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="contact-submit">상담 신청하기</button>
+      <p class="form-helper">버튼을 누르면 상담번호 010-9469-8957로 문의 내용을 보낼 수 있도록 문자 작성 화면이 열립니다.</p>
+    </form>
   </div>
 </section>
-</main><footer><div class="wrap footer"><strong>ATELIER 933</strong><span>부산광역시 부산진구 양정동 406-5번지</span><span>© ATELIER 933</span></div></footer><script src="js/main.js"></script></body></html>
+</main><footer><div class="wrap footer"><strong>ATELIER 933</strong><span>부산광역시 부산진구 양정동 406-5번지</span><span>© ATELIER 933</span></div></footer><script src="js/main.js"></script>
+<script>
+(function(){
+  const form = document.getElementById('avenueContactForm');
+  if(!form) return;
+
+  const phoneInput = document.getElementById('contactPhone');
+  phoneInput.addEventListener('input', function(){
+    let v = this.value.replace(/\D/g,'').slice(0,11);
+    if(v.length > 7) v = v.replace(/(\d{3})(\d{4})(\d{1,4})/,'$1-$2-$3');
+    else if(v.length > 3) v = v.replace(/(\d{3})(\d{1,4})/,'$1-$2');
+    this.value = v;
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('contactName').value.trim();
+    const phone = phoneInput.value.trim();
+    const timeEl = form.querySelector('input[name="time"]:checked');
+    const agree = document.getElementById('privacyAgree').checked;
+
+    if(!name || !phone || !timeEl || !agree){
+      alert('필수 항목을 모두 확인해주세요.');
+      return;
+    }
+
+    const msg = [
+      '[AVENUE 933 상가 상담 신청]',
+      '성함: ' + name,
+      '연락처: ' + phone,
+      '연락 가능 시간: ' + timeEl.value
+    ].join('\\n');
+
+    const smsUrl = 'sms:01094698957?body=' + encodeURIComponent(msg);
+    window.location.href = smsUrl;
+  });
+})();
+</script>
+
+</body></html>
