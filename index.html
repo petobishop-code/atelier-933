@@ -258,17 +258,21 @@
       </div>
 
       <button type="submit" class="contact-submit">상담 신청하기</button>
-      <p class="form-helper">버튼을 누르면 상담번호 010-9469-8957로 문의 내용을 보낼 수 있도록 문자 작성 화면이 열립니다.</p>
+      <p class="form-helper">상담 신청 내용은 담당자에게 바로 전달됩니다.</p>
     </form>
   </div>
 </section>
 </main><footer><div class="wrap footer"><strong>ATELIER 933</strong><span>부산광역시 부산진구 양정동 406-5번지</span><span>© ATELIER 933</span></div></footer><script src="js/main.js"></script>
+
 <script>
 (function(){
   const form = document.getElementById('avenueContactForm');
   if(!form) return;
 
   const phoneInput = document.getElementById('contactPhone');
+  const submitBtn = form.querySelector('.contact-submit');
+  const helper = form.querySelector('.form-helper');
+
   phoneInput.addEventListener('input', function(){
     let v = this.value.replace(/\D/g,'').slice(0,11);
     if(v.length > 7) v = v.replace(/(\d{3})(\d{4})(\d{1,4})/,'$1-$2-$3');
@@ -276,7 +280,7 @@
     this.value = v;
   });
 
-  form.addEventListener('submit', function(e){
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
 
     const name = document.getElementById('contactName').value.trim();
@@ -289,17 +293,41 @@
       return;
     }
 
-    const msg = [
-      '[AVENUE 933 상가 상담 신청]',
-      '성함: ' + name,
-      '연락처: ' + phone,
-      '연락 가능 시간: ' + timeEl.value
-    ].join('\\n');
+    submitBtn.disabled = true;
+    submitBtn.textContent = '접수 중...';
+    if(helper) helper.textContent = '상담 신청을 접수하고 있습니다. 잠시만 기다려주세요.';
 
-    const smsUrl = 'sms:01094698957?body=' + encodeURIComponent(msg);
-    window.location.href = smsUrl;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          phone,
+          time: timeEl.value
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if(!response.ok || !result.ok){
+        throw new Error(result.message || '전송에 실패했습니다.');
+      }
+
+      alert('상담 신청이 완료되었습니다. 확인 후 연락드리겠습니다.');
+      form.reset();
+      document.getElementById('time1').checked = true;
+      if(helper) helper.textContent = '상담 신청 내용은 담당자에게 바로 전달됩니다.';
+    } catch(err) {
+      alert(err.message || '상담 신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+      if(helper) helper.textContent = '전송에 실패했습니다. 잠시 후 다시 시도해주세요.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '상담 신청하기';
+    }
   });
 })();
 </script>
+
 
 </body></html>

@@ -460,3 +460,8 @@
   .time-options{grid-template-columns:repeat(2,1fr)}
   .time-options label{font-size:12px}
 }
+
+.contact-submit:disabled{
+  opacity:.65;
+  cursor:wait;
+}
