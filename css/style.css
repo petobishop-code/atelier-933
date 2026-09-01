@@ -832,3 +832,220 @@ body.modal-open{overflow:hidden}
     font-size:7px !important;
   }
 }
+
+/* --- v6.9 floating contact: bigger, rounder 3-card style --- */
+.floating-contact{
+  width: 250px !important;
+  gap: 16px !important;
+  right: 24px !important;
+}
+
+.floating-phone,
+.floating-action{
+  min-height: 92px !important;
+  border-radius: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 20px 22px !important;
+}
+
+.floating-phone{
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+
+.floating-phone small{
+  font-size: 10px !important;
+  margin-bottom: 8px !important;
+  letter-spacing: .18em !important;
+}
+
+.floating-phone strong{
+  font-size: 28px !important;
+  line-height: 1.05 !important;
+  margin-bottom: 6px !important;
+  letter-spacing: -.02em !important;
+}
+
+.floating-phone span{
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+
+.floating-action{
+  gap: 16px !important;
+}
+
+.floating-action.consult,
+.floating-action.register{
+  color:#fff !important;
+}
+
+.floating-action strong{
+  font-size: 19px !important;
+  line-height: 1.15 !important;
+}
+
+.floating-action small{
+  font-size: 9px !important;
+  margin-bottom: 6px !important;
+  letter-spacing: .18em !important;
+}
+
+.floating-icon{
+  width: 54px !important;
+  height: 54px !important;
+  flex-basis: 54px !important;
+  font-size: 23px !important;
+  border-width: 1.5px !important;
+}
+
+/* Make the stack feel more centered and prominent */
+@media (min-width: 901px){
+  .floating-contact{
+    top: 52% !important;
+  }
+}
+
+/* Tablet */
+@media(max-width:900px){
+  .floating-contact{
+    width: 220px !important;
+    right: 16px !important;
+    gap: 12px !important;
+  }
+
+  .floating-phone,
+  .floating-action{
+    min-height: 82px !important;
+    border-radius: 24px !important;
+    padding: 18px 18px !important;
+  }
+
+  .floating-phone strong{
+    font-size: 24px !important;
+  }
+
+  .floating-action strong{
+    font-size: 17px !important;
+  }
+
+  .floating-icon{
+    width: 48px !important;
+    height: 48px !important;
+    flex-basis: 48px !important;
+    font-size: 20px !important;
+  }
+}
+
+/* Mobile: keep visible but compact */
+@media(max-width:600px){
+  .floating-contact{
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    width: auto !important;
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .floating-phone,
+  .floating-action{
+    min-height: 70px !important;
+    border-radius: 18px !important;
+    padding: 10px 10px !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.18) !important;
+  }
+
+  .floating-phone{
+    justify-content: center !important;
+  }
+
+  .floating-phone small{
+    font-size: 8px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .floating-phone strong{
+    font-size: 15px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .floating-phone span{
+    font-size: 8px !important;
+  }
+
+  .floating-action{
+    gap: 6px !important;
+    justify-content: center !important;
+  }
+
+  .floating-action strong{
+    font-size: 12px !important;
+  }
+
+  .floating-action small{
+    font-size: 7px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .floating-icon{
+    display: none !important;
+  }
+}
+
+/* --- HEADER RESTORE: keep original top navigation sizing --- */
+.site-header .header-cta.open-modal-btn{
+  width:auto !important;
+  height:auto !important;
+  min-height:0 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 auto !important;
+  margin-left:28px !important;
+  padding:11px 16px !important;
+  border:1px solid #ffffff66 !important;
+  border-radius:99px !important;
+  background:transparent !important;
+  color:#fff !important;
+  font-size:10px !important;
+  font-weight:400 !important;
+  letter-spacing:.1em !important;
+  line-height:1 !important;
+  box-shadow:none !important;
+}
+
+.hero .actions .btn.open-modal-btn{
+  width:auto !important;
+  height:auto !important;
+  min-height:0 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 auto !important;
+  padding:14px 22px !important;
+  border:1px solid #ffffff66 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  color:#fff !important;
+  font-size:10px !important;
+  font-weight:400 !important;
+  letter-spacing:.1em !important;
+  line-height:1 !important;
+  box-shadow:none !important;
+}
+
+@media(max-width:600px){
+  .site-header .header-cta.open-modal-btn{
+    margin-left:auto !important;
+    padding:9px 10px !important;
+    font-size:9px !important;
+  }
+  .hero .actions .btn.open-modal-btn{
+    width:180px !important;
+    justify-content:center !important;
+  }
+}
