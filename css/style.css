@@ -1241,120 +1241,87 @@ body.modal-open{overflow:hidden}
   .insights-cta>a{width:100%}
 }
 
-/* --- v6.15 size tuning only: hero copy + contact section --- */
-/* HERO: only the red-box area from the screenshot. Header/nav is untouched. */
-.hero-copy .eyebrow{
-  font-size:11px !important;
-}
-.hero-copy>p:not(.eyebrow){
-  font-size:18px !important;
-  line-height:1.85 !important;
-}
-.hero .actions .btn{
-  font-size:12px !important;
-  padding:16px 26px !important;
-  min-height:48px !important;
-}
+/* --- v6.17 clinic opening detail --- */
+.clinic-detail-page{background:#f4f1ea;color:#191919}
+.clinic-detail-hero{position:relative;background:#0d1623 url("images/project-exterior.webp") center/cover no-repeat;color:#fff;padding:185px 0 125px}
+.clinic-detail-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,16,27,.93) 0%,rgba(7,16,27,.76) 48%,rgba(7,16,27,.38) 100%)}
+.clinic-detail-hero-inner{position:relative;z-index:2}
+.clinic-detail-hero h1{font:400 62px/1.1 Georgia,serif;margin:12px 0 25px;max-width:820px}
+.clinic-detail-hero-inner>p:last-of-type{font-size:15px;line-height:1.9;color:#d7dce1}
+.clinic-hero-actions{display:flex;gap:12px;margin-top:34px}
+.clinic-primary-btn,.clinic-outline-btn{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 21px;text-decoration:none;font-size:12px;font-weight:700}
+.clinic-primary-btn{background:#7a2e3a;color:#fff}
+.clinic-outline-btn{border:1px solid rgba(255,255,255,.5);color:#fff}
+.clinic-summary-band{background:#fff;border-bottom:1px solid #ded8cf}
+.clinic-summary-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.clinic-summary-grid article{padding:28px 24px;border-right:1px solid #ddd7ce}
+.clinic-summary-grid article:last-child{border-right:0}
+.clinic-summary-grid span{font:italic 20px Georgia,serif;color:#8f7554}
+.clinic-summary-grid strong{display:block;font-size:14px;margin:8px 0}
+.clinic-summary-grid p{margin:0;color:#777068;font-size:11px;line-height:1.65}
+.clinic-article{padding:95px 0}
+.clinic-article-layout{display:grid;grid-template-columns:230px 1fr;gap:75px;align-items:start}
+.clinic-toc{position:sticky;top:110px;border-top:1px solid #bbb3a8}
+.clinic-toc>span{display:block;font-size:8px;letter-spacing:.16em;color:#948a7f;padding:17px 0 11px}
+.clinic-toc a{display:block;padding:13px 0;border-top:1px solid #ddd6cc;text-decoration:none;color:#4f4a44;font-size:11px}
+.clinic-content{max-width:850px}
+.clinic-intro-block{padding-bottom:55px;border-bottom:1px solid #cec6ba}
+.clinic-intro-block h2{font:400 43px/1.18 Georgia,serif;margin:9px 0 22px}
+.clinic-intro-block>p:last-child,.clinic-article-section>p{font-size:14px;line-height:2;color:#625c55}
+.clinic-article-section{padding:60px 0;border-bottom:1px solid #d3ccc2}
+.clinic-section-no{font:italic 24px Georgia,serif;color:#7a2e3a}
+.clinic-article-section h3{font:400 31px/1.3 Georgia,serif;margin:12px 0 23px}
+.clinic-feature-box{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px}
+.clinic-feature-box>div{background:#fff;border:1px solid #ddd5ca;padding:22px}
+.clinic-feature-box b{display:block;font-size:8px;letter-spacing:.14em;color:#948779}
+.clinic-feature-box strong{display:block;font-size:17px;margin:10px 0}
+.clinic-feature-box p{font-size:11px;line-height:1.7;color:#756e65;margin:0}
+.clinic-checklist{margin-top:30px;background:#0d1623;color:#fff;padding:28px 30px}
+.clinic-checklist h4{font:400 22px Georgia,serif;margin:0 0 16px}
+.clinic-checklist ul{margin:0;padding-left:18px}
+.clinic-checklist li{font-size:12px;line-height:1.9;color:#d3d9de}
+.clinic-process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d8d1c8;margin-top:30px}
+.clinic-process div{background:#fff;padding:20px 16px}
+.clinic-process span{display:block;font-size:8px;letter-spacing:.12em;color:#9b8d80;margin-bottom:8px}
+.clinic-process b{font-size:12px}
+.clinic-specialties{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.clinic-specialties span{border:1px solid #c9c0b4;background:#fff;padding:10px 13px;font-size:11px}
+.clinic-rent-box{margin-top:60px;background:#7a2e3a;color:#fff;border-radius:14px;padding:30px;display:grid;grid-template-columns:1fr 1fr auto;gap:30px;align-items:center}
+.clinic-rent-box small{font-size:8px;letter-spacing:.16em;color:#e4b9bf}
+.clinic-rent-box h3{font:400 27px/1.25 Georgia,serif;margin:7px 0 0}
+.clinic-rent-box ul{margin:0;padding-left:18px}
+.clinic-rent-box li{font-size:11px;line-height:1.85;color:#f1dfe2}
+.clinic-rent-box a{display:inline-flex;align-items:center;justify-content:center;min-width:155px;height:48px;background:#fff;color:#7a2e3a;text-decoration:none;font-size:13px;font-weight:700}
+.clinic-disclaimer{margin-top:17px;font-size:10px;line-height:1.7;color:#8b837a}
+.clinic-bottom-cta{background:#0d1623;color:#fff;padding:75px 0}
+.clinic-bottom-cta .wrap{display:flex;justify-content:space-between;align-items:end;gap:40px}
+.clinic-bottom-cta small{font-size:8px;letter-spacing:.16em;color:#b3bdc6}
+.clinic-bottom-cta h2{font:400 42px/1.15 Georgia,serif;margin:10px 0 15px}
+.clinic-bottom-cta p{font-size:12px;color:#b9c0c7;margin:0}
+.clinic-bottom-cta a{display:inline-flex;align-items:center;justify-content:center;width:150px;height:50px;background:#7a2e3a;color:#fff;text-decoration:none;font-size:12px;font-weight:700}
 
-/* CONTACT: make the whole section slightly more readable */
-.contact-cta-copy h2{
-  font-size:60px !important;
-  line-height:1.08 !important;
+@media(max-width:980px){
+  .clinic-summary-grid{grid-template-columns:repeat(2,1fr)}
+  .clinic-summary-grid article:nth-child(2){border-right:0}
+  .clinic-summary-grid article:nth-child(-n+2){border-bottom:1px solid #ddd7ce}
+  .clinic-article-layout{grid-template-columns:1fr}
+  .clinic-toc{position:static;display:none}
+  .clinic-feature-box{grid-template-columns:1fr}
+  .clinic-process{grid-template-columns:repeat(2,1fr)}
+  .clinic-rent-box{grid-template-columns:1fr}
+  .clinic-rent-box a{width:100%}
 }
-.contact-cta-copy>.copy{
-  font-size:14px !important;
-  line-height:1.9 !important;
-}
-.contact-phone-card small{
-  font-size:10px !important;
-}
-.contact-phone-card a{
-  font-size:34px !important;
-}
-.contact-phone-card p{
-  font-size:13px !important;
-}
-.contact-action-panel article{
-  padding:34px !important;
-}
-.contact-action-panel article>span{
-  font-size:32px !important;
-}
-.contact-action-panel small{
-  font-size:10px !important;
-}
-.contact-action-panel h3{
-  font-size:30px !important;
-}
-.contact-action-panel p{
-  font-size:13px !important;
-  line-height:1.8 !important;
-}
-.contact-action-panel .open-modal-btn{
-  min-height:54px !important;
-  font-size:13px !important;
-}
-
-@media(max-width:600px){
-  .hero-copy>p:not(.eyebrow){
-    font-size:15px !important;
-  }
-  .hero .actions .btn{
-    font-size:11px !important;
-    min-height:46px !important;
-  }
-  .contact-cta-copy h2{
-    font-size:44px !important;
-  }
-  .contact-phone-card a{
-    font-size:28px !important;
-  }
-  .contact-action-panel h3{
-    font-size:26px !important;
-  }
-}
-
-/* --- v6.16 FINAL: enlarge only the hero red-box buttons area. Top header untouched. --- */
-.hero .actions{
-  gap: 14px !important;
-  margin-top: 24px !important;
-}
-
-.hero .actions .btn{
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 60px !important;
-  padding: 0 26px !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: .08em !important;
-  line-height: 1 !important;
-}
-
-.hero .actions .btn:first-child{
-  min-width: 164px !important;
-}
-
-.hero .actions .btn.open-modal-btn{
-  min-width: 128px !important;
-}
-
-/* Mobile keeps readability without breaking layout */
 @media(max-width:700px){
-  .hero .actions{
-    gap: 10px !important;
-    flex-wrap: wrap !important;
-  }
-  .hero .actions .btn{
-    min-height: 54px !important;
-    font-size: 12px !important;
-    padding: 0 20px !important;
-  }
-  .hero .actions .btn:first-child{
-    min-width: 150px !important;
-  }
-  .hero .actions .btn.open-modal-btn{
-    min-width: 120px !important;
-  }
+  .clinic-detail-hero{padding:135px 0 90px}
+  .clinic-detail-hero h1{font-size:43px}
+  .clinic-hero-actions{flex-direction:column}
+  .clinic-primary-btn,.clinic-outline-btn{width:100%;box-sizing:border-box}
+  .clinic-summary-grid{grid-template-columns:1fr}
+  .clinic-summary-grid article{border-right:0;border-bottom:1px solid #ddd7ce}
+  .clinic-summary-grid article:last-child{border-bottom:0}
+  .clinic-intro-block h2{font-size:34px}
+  .clinic-article-section h3{font-size:27px}
+  .clinic-process{grid-template-columns:1fr}
+  .clinic-bottom-cta .wrap{flex-direction:column;align-items:flex-start}
+  .clinic-bottom-cta a{width:100%}
 }
