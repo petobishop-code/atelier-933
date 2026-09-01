@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.xn--933-v18mx77bbyam67d.com/sitemap.xml
