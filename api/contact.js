@@ -40,8 +40,10 @@ export default async function handler(req, res) {
     ];
 
     if (isInterest) {
-      lines.push(`관심 층: ${floor || '-'}`);
       lines.push(`관심 유형: ${interestType || '-'}`);
+      if (interestType === '상가') {
+        lines.push(`관심 층: ${floor || '-'}`);
+      }
     }
 
     lines.push(`연락 가능 시간: ${time}`);

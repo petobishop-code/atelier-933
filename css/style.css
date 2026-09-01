@@ -520,3 +520,7 @@ body.modal-open{overflow:hidden}
  .choice-options.four{grid-template-columns:repeat(2,1fr)}
  .choice-options.three{grid-template-columns:repeat(3,1fr)}
 }
+
+.choice-options.two{
+  grid-template-columns:repeat(2,1fr);
+}
