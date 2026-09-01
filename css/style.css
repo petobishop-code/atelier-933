@@ -203,3 +203,51 @@
   .potential-grid{grid-template-columns:1fr}
   .potential-grid article{min-height:185px}
 }
+
+/* --- v6 commercial focus --- */
+.avenue-v6{grid-template-columns:1.05fr .95fr;min-height:760px}
+.avenue-v6 .avenue-img{min-height:760px;background:#08182a;display:flex;align-items:center;justify-content:center;padding:35px}
+.avenue-v6 .avenue-img img{object-fit:contain}
+.avenue-keywords{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.avenue-keywords span{border:1px solid #3a4650;padding:10px 13px;font-size:9px;letter-spacing:.12em;color:#d8dde1}
+
+.floor-v6{padding-left:0;padding-right:0}
+.floor-v6>.floor-head{margin-bottom:48px}
+.floor-detail{padding:80px 0}
+.floor-detail.light-floor{background:#f1eee7;color:#171717}
+.floor-detail-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:55px;align-items:center}
+.floor-detail-grid.reverse{grid-template-columns:1.3fr .7fr}
+.floor-copy>span{font:64px Georgia,serif;color:#c99c56}
+.floor-copy>small{display:block;font-size:9px;letter-spacing:.14em;color:#8d99a3;margin:2px 0 18px}
+.light-floor .floor-copy>small{color:#8a8278}
+.floor-copy h3{font:400 34px/1.2 Georgia,serif;margin:0 0 20px}
+.floor-copy>p{font-size:13px;line-height:1.85;color:#aeb7be}
+.light-floor .floor-copy>p{color:#66615a}
+.floor-copy dl{margin:28px 0 0}
+.floor-copy dl div{padding:15px 0;border-top:1px solid #34404a}
+.light-floor .floor-copy dl div{border-color:#d0c8bd}
+.floor-copy dt{font-size:10px;letter-spacing:.08em;color:#83909a;margin-bottom:7px}
+.floor-copy dd{margin:0;font-size:12px;line-height:1.65}
+.floor-image{min-height:420px}
+.floor-image img{object-fit:contain;background:#08182a}
+.light-floor .floor-image img{background:transparent}
+.floor-plan-wide{margin-top:45px}
+.floor-plan-wide img{height:auto;max-height:760px;object-fit:contain;background:#08182a}
+.floor-disclaimer{font-size:10px;color:#817b72;padding-top:16px;padding-bottom:10px}
+
+.design-list article img{object-fit:contain;background:#08182a;padding:10px}
+
+@media(max-width:980px){
+ .avenue-v6{grid-template-columns:1fr}
+ .avenue-v6 .avenue-img{min-height:620px}
+ .floor-detail-grid,.floor-detail-grid.reverse{grid-template-columns:1fr}
+ .floor-detail-grid.reverse .floor-image{order:2}
+ .floor-detail-grid.reverse .floor-copy{order:1}
+}
+@media(max-width:600px){
+ .avenue-v6 .avenue-img{min-height:520px;padding:20px}
+ .floor-detail{padding:60px 0}
+ .floor-copy>span{font-size:50px}
+ .floor-copy h3{font-size:29px}
+ .floor-image{min-height:280px}
+}
