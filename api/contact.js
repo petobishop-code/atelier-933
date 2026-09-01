@@ -1,4 +1,3 @@
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -6,7 +5,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { type, name, phone, time, floor, interestType } = req.body || {};
+    const { name, phone, time } = req.body || {};
 
     if (!name || !phone || !time) {
       return res.status(400).json({ ok: false, message: '필수 항목이 누락되었습니다.' });
@@ -30,31 +29,21 @@ export default async function handler(req, res) {
       hour12: false
     }).format(now);
 
-    const isInterest = type === '관심고객등록';
-
-    const lines = [
-      isInterest ? '⭐ AVENUE 933 관심고객 등록' : '📩 AVENUE 933 상담 문의',
+    const text = [
+      '📩 AVENUE 933 상담 신청',
       '',
       `성함: ${name}`,
-      `연락처: ${phone}`
-    ];
-
-    if (isInterest) {
-      lines.push(`관심 유형: ${interestType || '-'}`);
-      if (interestType === '상가') {
-        lines.push(`관심 층: ${floor || '-'}`);
-      }
-    }
-
-    lines.push(`연락 가능 시간: ${time}`);
-    lines.push(`${isInterest ? '등록' : '신청'} 시간: ${koreaTime}`);
+      `연락처: ${phone}`,
+      `연락 가능 시간: ${time}`,
+      `신청 시간: ${koreaTime}`
+    ].join('\n');
 
     const telegramRes = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: chatId,
-        text: lines.join('\n')
+        text
       })
     });
 
@@ -62,12 +51,12 @@ export default async function handler(req, res) {
 
     if (!telegramRes.ok || !data.ok) {
       console.error('Telegram sendMessage failed:', data);
-      return res.status(502).json({ ok: false, message: '접수 전송에 실패했습니다.' });
+      return res.status(502).json({ ok: false, message: '상담 접수 전송에 실패했습니다.' });
     }
 
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ ok: false, message: '접수 중 오류가 발생했습니다.' });
+    return res.status(500).json({ ok: false, message: '상담 접수 중 오류가 발생했습니다.' });
   }
 }

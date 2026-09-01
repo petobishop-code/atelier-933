@@ -1049,3 +1049,31 @@ body.modal-open{overflow:hidden}
     justify-content:center !important;
   }
 }
+
+/* --- v6.10 consult only + time button cleanup --- */
+.contact-action-panel{
+  grid-template-columns: 1fr !important;
+}
+.contact-action-panel article{
+  max-width: 520px;
+}
+.time-options label,
+.choice-options label{
+  display:block !important;
+  width:100% !important;
+}
+.time-options input,
+.choice-options input{
+  position:absolute !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+  width:0 !important;
+  height:0 !important;
+  margin:0 !important;
+  appearance:none !important;
+}
+.time-options span,
+.choice-options span{
+  width:100% !important;
+  box-sizing:border-box !important;
+}
