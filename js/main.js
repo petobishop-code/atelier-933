@@ -1,4 +1,1 @@
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll',()=>{
-  header.style.background = window.scrollY > 40 ? 'rgba(7,15,27,.94)' : 'linear-gradient(to bottom,rgba(5,15,30,.9),rgba(5,15,30,.15))';
-});
+const h=document.getElementById("header"),m=document.querySelector(".mobile-menu"),b=document.querySelector(".menu-btn");addEventListener("scroll",()=>h.classList.toggle("scrolled",scrollY>20),{passive:true});b.addEventListener("click",()=>{m.classList.toggle("open");document.body.style.overflow=m.classList.contains("open")?"hidden":""});m.querySelectorAll("a").forEach(a=>a.onclick=()=>{m.classList.remove("open");document.body.style.overflow=""});const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");o.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(x=>o.observe(x));
