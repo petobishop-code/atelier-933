@@ -1429,69 +1429,48 @@ body.modal-open{overflow:hidden}
   }
 }
 
-/* --- v6.23 clinic detail images + SEO FAQ --- */
+
+/* --- v29: insight detail image distribution + related links --- */
 .clinic-seo-image{
-  margin:34px 0 8px;
-  padding:0;
+  margin:28px 0 8px;
+  background:#fff;
+  border:1px solid #ddd5ca;
+  padding:14px;
 }
 .clinic-seo-image img{
   display:block;
   width:100%;
   height:auto;
-  border-radius:12px;
-  border:1px solid #d7cfc4;
-  background:#fff;
 }
 .clinic-seo-image figcaption{
   margin-top:10px;
-  color:#81786e;
-  font-size:10px;
-  line-height:1.65;
+  font-size:11px;
+  line-height:1.7;
+  color:#7b7369;
 }
-.clinic-seo-image-contain img{
-  object-fit:contain;
+.clinic-related-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:22px;
+}
+.clinic-related-links a{
+  display:block;
+  padding:16px 18px;
   background:#fff;
-}
-.clinic-faq-section>p{
-  margin-bottom:26px;
-}
-.clinic-faq-list{
-  border-top:1px solid #cfc6ba;
-}
-.clinic-faq-list details{
-  border-bottom:1px solid #d7cfc5;
-  background:rgba(255,255,255,.28);
-}
-.clinic-faq-list summary{
-  position:relative;
-  list-style:none;
-  cursor:pointer;
-  padding:21px 48px 21px 0;
-  font-size:14px;
-  font-weight:700;
-  line-height:1.55;
-  color:#292621;
-}
-.clinic-faq-list summary::-webkit-details-marker{display:none}
-.clinic-faq-list summary:after{
-  content:'+';
-  position:absolute;
-  right:4px;
-  top:17px;
-  font:400 25px/1 Georgia,serif;
-  color:#7a2e3a;
-}
-.clinic-faq-list details[open] summary:after{content:'−'}
-.clinic-faq-list details p{
-  margin:0;
-  padding:0 48px 22px 0;
+  border:1px solid #ddd5ca;
+  color:#1c1c1c;
+  text-decoration:none;
   font-size:13px;
-  line-height:1.9;
-  color:#625c55;
+  line-height:1.5;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.clinic-related-links a:hover{
+  transform:translateY(-2px);
+  border-color:#b9aa98;
+  box-shadow:0 10px 22px rgba(0,0,0,.08);
 }
 @media(max-width:700px){
-  .clinic-seo-image{margin-top:24px}
-  .clinic-seo-image img{border-radius:8px}
-  .clinic-faq-list summary{font-size:13px;padding-right:36px}
-  .clinic-faq-list details p{padding-right:18px;font-size:12px}
+  .clinic-seo-image{padding:10px}
+  .clinic-related-links{grid-template-columns:1fr}
 }
