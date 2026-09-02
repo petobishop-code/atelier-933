@@ -22,7 +22,7 @@
       <a href="index.html#contact">CONTACT</a>
       <a class="active" href="insights.html">INSIGHTS</a>
     </nav>
-    <a class="header-cta" href="index.html#contact">상담 신청</a>
+    <a class="header-cta open-modal-btn" href="#" data-modal="consultModal">상담 신청</a>
   </header>
 
   <main>
@@ -95,7 +95,7 @@
             <h3>궁금한 내용이 있으신가요?</h3>
             <p>상가 분양·임대 및 공간 관련 상담은 기존 상담창을 통해 문의해주세요.</p>
           </div>
-          <a href="index.html#contact">상담 신청</a>
+          <a href="#" class="open-modal-btn" data-modal="consultModal">상담 신청</a>
         </div>
       </div>
     </section>
@@ -164,7 +164,7 @@
   const closeButton=modal?modal.querySelector('.modal-close'):null;
   function openModal(){ if(!modal)return; modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); }
   function closeModal(){ if(!modal)return; modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); }
-  openButtons.forEach(btn=>btn.addEventListener('click',openModal));
+  openButtons.forEach(btn=>btn.addEventListener('click',e=>{ e.preventDefault(); openModal(); }));
   if(closeButton) closeButton.addEventListener('click',closeModal);
   if(modal) modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
