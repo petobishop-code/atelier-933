@@ -1428,3 +1428,70 @@ body.modal-open{overflow:hidden}
     min-width:0 !important;
   }
 }
+
+/* --- v6.23 clinic detail images + SEO FAQ --- */
+.clinic-seo-image{
+  margin:34px 0 8px;
+  padding:0;
+}
+.clinic-seo-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  border:1px solid #d7cfc4;
+  background:#fff;
+}
+.clinic-seo-image figcaption{
+  margin-top:10px;
+  color:#81786e;
+  font-size:10px;
+  line-height:1.65;
+}
+.clinic-seo-image-contain img{
+  object-fit:contain;
+  background:#fff;
+}
+.clinic-faq-section>p{
+  margin-bottom:26px;
+}
+.clinic-faq-list{
+  border-top:1px solid #cfc6ba;
+}
+.clinic-faq-list details{
+  border-bottom:1px solid #d7cfc5;
+  background:rgba(255,255,255,.28);
+}
+.clinic-faq-list summary{
+  position:relative;
+  list-style:none;
+  cursor:pointer;
+  padding:21px 48px 21px 0;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.55;
+  color:#292621;
+}
+.clinic-faq-list summary::-webkit-details-marker{display:none}
+.clinic-faq-list summary:after{
+  content:'+';
+  position:absolute;
+  right:4px;
+  top:17px;
+  font:400 25px/1 Georgia,serif;
+  color:#7a2e3a;
+}
+.clinic-faq-list details[open] summary:after{content:'−'}
+.clinic-faq-list details p{
+  margin:0;
+  padding:0 48px 22px 0;
+  font-size:13px;
+  line-height:1.9;
+  color:#625c55;
+}
+@media(max-width:700px){
+  .clinic-seo-image{margin-top:24px}
+  .clinic-seo-image img{border-radius:8px}
+  .clinic-faq-list summary{font-size:13px;padding-right:36px}
+  .clinic-faq-list details p{padding-right:18px;font-size:12px}
+}
