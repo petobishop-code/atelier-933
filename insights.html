@@ -106,5 +106,83 @@
       <span>AVENUE 933</span>
     </div>
   </footer>
+
+<aside class="floating-contact insight-floating-contact" aria-label="빠른 상담">
+  <a class="floating-phone" href="tel:01094698957">
+    <small>CALL</small>
+    <strong>010-9469-8957</strong>
+    <span>전화 상담 바로 연결</span>
+  </a>
+  <button type="button" class="floating-action consult open-modal-btn" data-modal="consultModal">
+    <span class="floating-icon">✎</span>
+    <span><small>CONTACT</small><strong>상담 신청</strong></span>
+  </button>
+</aside>
+
+<div class="modal-backdrop" id="consultModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="consultTitle">
+    <button type="button" class="modal-close" aria-label="닫기">×</button>
+    <div class="modal-head">
+      <span>Contact</span>
+      <h3 id="consultTitle">상담 문의</h3>
+      <p>담당자가 확인 후 연락드립니다. 편하신 시간대를 선택해 주세요.</p>
+    </div>
+    <a class="modal-phone-link" href="tel:01094698957">
+      <span>전화로 바로 상담하기</span><strong>010-9469-8957</strong>
+    </a>
+    <form class="avenue-modal-form" data-form-type="상담문의">
+      <label><b>성함</b><input type="text" name="name" placeholder="홍길동" required></label>
+      <label><b>연락처</b><input type="tel" name="phone" placeholder="010-0000-0000" inputmode="tel" required></label>
+      <fieldset class="time-field">
+        <legend>연락 가능한 시간대</legend>
+        <div class="time-options">
+          <label><input type="radio" name="time" value="오전 9~12시" checked><span>오전 9~12시</span></label>
+          <label><input type="radio" name="time" value="오후 12~15시"><span>오후 12~15시</span></label>
+          <label><input type="radio" name="time" value="오후 15~18시"><span>오후 15~18시</span></label>
+          <label><input type="radio" name="time" value="저녁 18시 이후"><span>저녁 18시 이후</span></label>
+          <label><input type="radio" name="time" value="아무때나"><span>아무때나</span></label>
+        </div>
+      </fieldset>
+      <div class="privacy-box">
+        <b>개인정보 수집·이용 동의</b>
+        <p>· 수집 항목: 성함, 연락처, 연락 가능한 시간대</p>
+        <p>· 이용 목적: 상가 분양·임대 상담 안내</p>
+        <p>· 보유 기간: 상담 종료 시 또는 동의 철회 시 지체 없이 파기</p>
+        <label class="agree-row"><input type="checkbox" name="privacy" required><span>위 내용을 확인하였으며 수집·이용에 동의합니다.</span></label>
+      </div>
+      <button type="submit" class="contact-submit">상담 신청하기</button>
+      <p class="form-helper">상담 신청 내용은 담당자에게 바로 전달됩니다.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal=document.getElementById('consultModal');
+  const openButtons=document.querySelectorAll('.open-modal-btn[data-modal="consultModal"]');
+  const closeButton=modal?modal.querySelector('.modal-close'):null;
+  function openModal(){ if(!modal)return; modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); }
+  function closeModal(){ if(!modal)return; modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); }
+  openButtons.forEach(btn=>btn.addEventListener('click',openModal));
+  if(closeButton) closeButton.addEventListener('click',closeModal);
+  if(modal) modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+  document.querySelectorAll('.avenue-modal-form input[type="tel"]').forEach(input=>{
+    input.addEventListener('input',function(){ let v=this.value.replace(/\D/g,'').slice(0,11); if(v.length>7)v=v.replace(/(\d{3})(\d{4})(\d{1,4})/,'$1-$2-$3'); else if(v.length>3)v=v.replace(/(\d{3})(\d{1,4})/,'$1-$2'); this.value=v; });
+  });
+  document.querySelectorAll('.avenue-modal-form').forEach(form=>{
+    form.addEventListener('submit',async function(e){
+      e.preventDefault(); const submitBtn=form.querySelector('.contact-submit'); const helper=form.querySelector('.form-helper'); const fd=new FormData(form);
+      const payload={type:'상담문의',name:(fd.get('name')||'').trim(),phone:(fd.get('phone')||'').trim(),time:fd.get('time')||'',floor:'',interestType:''};
+      if(!payload.name||!payload.phone||!payload.time||!fd.get('privacy')){ alert('필수 항목을 모두 확인해주세요.'); return; }
+      submitBtn.disabled=true; submitBtn.textContent='접수 중...'; helper.textContent='내용을 전달하고 있습니다.';
+      try{ const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); const result=await response.json().catch(()=>({})); if(!response.ok||!result.ok) throw new Error(result.message||'전송에 실패했습니다.'); alert('상담 신청이 완료되었습니다. 확인 후 연락드리겠습니다.'); form.reset(); closeModal(); }
+      catch(err){ alert(err.message||'접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.'); helper.textContent='전송에 실패했습니다. 잠시 후 다시 시도해주세요.'; }
+      finally{ submitBtn.disabled=false; submitBtn.textContent='상담 신청하기'; }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

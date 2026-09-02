@@ -1347,3 +1347,8 @@ body.modal-open{overflow:hidden}
   letter-spacing:.12em !important;
   color:#7a2e3a !important;
 }
+
+/* v19: INSIGHTS / clinic detail floating consult patch */
+.clinic-outline-btn.open-modal-btn{font:inherit;cursor:pointer;background:transparent}
+.insight-floating-contact .floating-action.consult{border-bottom:0}
+@media(max-width:760px){.insight-floating-contact{display:none}}
