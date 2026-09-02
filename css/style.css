@@ -1352,3 +1352,20 @@ body.modal-open{overflow:hidden}
 .clinic-outline-btn.open-modal-btn{font:inherit;cursor:pointer;background:transparent}
 .insight-floating-contact .floating-action.consult{border-bottom:0}
 @media(max-width:760px){.insight-floating-contact{display:none}}
+
+/* --- v20: clinic hero action button size balance --- */
+@media (min-width:601px){
+  .clinic-hero-actions{
+    align-items:center;
+  }
+  .clinic-hero-actions .clinic-primary-btn,
+  .clinic-hero-actions .clinic-outline-btn.open-modal-btn{
+    width:190px;
+    min-width:190px;
+    max-width:190px;
+    flex:0 0 190px;
+    padding:0 16px;
+    white-space:nowrap;
+    box-sizing:border-box;
+  }
+}
