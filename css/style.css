@@ -1369,3 +1369,62 @@ body.modal-open{overflow:hidden}
     box-sizing:border-box;
   }
 }
+
+/* --- v6.22 clinic hero CTA exact alignment fix --- */
+.clinic-hero-actions{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  margin-top:34px !important;
+}
+.clinic-hero-actions .clinic-primary-btn,
+.clinic-hero-actions .clinic-outline-btn{
+  width:180px !important;
+  min-width:180px !important;
+  height:50px !important;
+  padding:0 16px !important;
+  margin:0 !important;
+  box-sizing:border-box !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:7px !important;
+  font-family:inherit !important;
+  font-size:12px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  text-decoration:none !important;
+  cursor:pointer !important;
+  appearance:none !important;
+  -webkit-appearance:none !important;
+}
+.clinic-hero-actions .clinic-primary-btn{
+  background:#7a2e3a !important;
+  border:1px solid #7a2e3a !important;
+  color:#fff !important;
+}
+.clinic-hero-actions .clinic-outline-btn{
+  background:#243a31 !important;
+  border:1px solid #365548 !important;
+  color:#fff !important;
+}
+.clinic-hero-actions .clinic-primary-btn:hover{
+  background:#893846 !important;
+  border-color:#893846 !important;
+}
+.clinic-hero-actions .clinic-outline-btn:hover{
+  background:#2d493d !important;
+  border-color:#466a59 !important;
+}
+@media(max-width:600px){
+  .clinic-hero-actions{
+    flex-wrap:wrap !important;
+  }
+  .clinic-hero-actions .clinic-primary-btn,
+  .clinic-hero-actions .clinic-outline-btn{
+    width:100% !important;
+    min-width:0 !important;
+  }
+}
