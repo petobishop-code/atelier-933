@@ -8,6 +8,98 @@
 <title>INSIGHTS | ATELIER 933</title>
 <meta content="ATELIER 933의 병원개원 정보, 상가매물, 상권·입지 정보와 분양·임대 관련 콘텐츠를 모아보는 INSIGHTS 페이지입니다." name="description"/>
 <link href="css/style.css" rel="stylesheet"/>
+
+<style id="insights-card-grid-fix">
+/* INSIGHTS 카드 레이아웃 복구 - 이 페이지에만 적용 */
+body.insights-page .insights-section{
+  background:#f3f0e9;
+  padding:90px 0 110px;
+}
+body.insights-page .insights-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  margin-bottom:38px;
+}
+body.insights-page .insights-head h2{
+  margin:8px 0 0;
+}
+body.insights-page .insights-head>p{
+  max-width:470px;
+  margin:0;
+}
+body.insights-page .insights-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:18px !important;
+  align-items:stretch;
+}
+body.insights-page .insights-grid .insight-card{
+  display:flex !important;
+  flex-direction:column !important;
+  min-height:255px;
+  padding:28px 26px !important;
+  background:#fff !important;
+  border:1px solid #d9d3c8 !important;
+  border-radius:0 !important;
+  color:#131922 !important;
+  text-decoration:none !important;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+body.insights-page .insights-grid .insight-card:hover{
+  transform:translateY(-4px);
+  border-color:#a88e5d !important;
+  box-shadow:0 14px 34px rgba(13,22,35,.08);
+}
+body.insights-page .insights-grid .insight-card>span:first-child{
+  display:block;
+  margin-bottom:18px;
+  color:#9a7f4e;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.13em;
+  line-height:1.5;
+}
+body.insights-page .insights-grid .insight-card h3{
+  margin:0 0 14px !important;
+  color:#111820 !important;
+  font-size:21px !important;
+  line-height:1.45 !important;
+  letter-spacing:-.025em;
+}
+body.insights-page .insights-grid .insight-card p{
+  margin:0 0 24px !important;
+  color:#66707a !important;
+  font-size:13px !important;
+  line-height:1.8 !important;
+}
+body.insights-page .insights-grid .card-link-label{
+  display:block !important;
+  margin-top:auto !important;
+  padding-top:17px;
+  border-top:1px solid #ece8e0;
+  color:#171d25 !important;
+  font-size:10px !important;
+  font-weight:800 !important;
+  letter-spacing:.1em;
+}
+@media(max-width:1050px){
+  body.insights-page .insights-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:680px){
+  body.insights-page .insights-section{padding:64px 0 80px}
+  body.insights-page .insights-head{display:block}
+  body.insights-page .insights-head>p{margin-top:16px}
+  body.insights-page .insights-grid{
+    grid-template-columns:1fr !important;
+  }
+  body.insights-page .insights-grid .insight-card{min-height:auto}
+}
+</style>
+
 </head>
 <body class="insights-page">
 <header class="site-header insights-header">
