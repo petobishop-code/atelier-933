@@ -1,10 +1,10 @@
-ATELIER 933 공식 사이트용 메디컬 빌딩 4개 내부페이지
+AVENUE 933 공식 사이트용 메디컬 빌딩 4개 내부페이지
 
 중요: 이 ZIP에는 index.html / style.css / script.js가 없습니다.
-기존 정상 복구된 ATELIER 933 메인 디자인을 절대 덮어쓰지 않기 위한 구성입니다.
+기존 정상 복구된 AVENUE 933 메인 디자인을 절대 덮어쓰지 않기 위한 구성입니다.
 
 업로드:
-1) 아래 4개 HTML만 기존 ATELIER 933 저장소 루트에 업로드
+1) 아래 4개 HTML만 기존 AVENUE 933 저장소 루트에 업로드
 - busanjingu-medical-building.html
 - yangjeong-medical-building.html
 - yeonsan-medical-building.html

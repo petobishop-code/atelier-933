@@ -1,4 +1,4 @@
-<!-- ATELIER 933 기존 INSIGHTS 목록의 마지막 항목 뒤에 아래 4개만 추가하세요. -->
+<!-- AVENUE 933 기존 INSIGHTS 목록의 마지막 항목 뒤에 아래 4개만 추가하세요. -->
 <a href="busanjingu-medical-building.html"><span>09</span><div><small>MEDICAL BUILDING</small><h3>부산진구 메디컬 빌딩, 개원 전 확인해야 할 진료권과 공간 조건</h3></div><b>→</b></a>
 <a href="yangjeong-medical-building.html"><span>10</span><div><small>YANGJEONG MEDICAL</small><h3>양정 메디컬 빌딩, 양정역 연결과 반복 내원 동선을 보는 기준</h3></div><b>→</b></a>
 <a href="yeonsan-medical-building.html"><span>11</span><div><small>YEONSAN MEDICAL</small><h3>연산 메디컬 빌딩, 양정까지 개원 후보를 넓혀볼 이유</h3></div><b>→</b></a>
