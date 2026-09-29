@@ -945,3 +945,115 @@ button.nav-cta{
   .route-steps{grid-template-columns:1fr}
   .location-mini-stats{grid-template-columns:1fr}
 }
+
+
+/* v12 route grouping adjustment */
+.route-single-stack{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+}
+.route-flow-block img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  background:#fff;
+}
+.grouped-visual-block{
+  margin:0;
+  border:1px solid #e1e3e1;
+  background:#fff;
+}
+.grouped-visual-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+.grouped-visual-images img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+  background:#f7f7f5;
+}
+.grouped-visual-images img + img{
+  border-left:1px solid #e8ebea;
+}
+.grouped-visual-block figcaption{
+  padding:14px 16px 16px;
+  border-top:1px solid #e9ebea;
+}
+.grouped-visual-block figcaption strong{
+  display:block;
+  color:#1d2320;
+  font-size:15px;
+  margin-bottom:3px;
+}
+.grouped-visual-block figcaption span{
+  display:block;
+  color:#737975;
+  font-size:12px;
+}
+@media(max-width:900px){
+  .grouped-visual-images{
+    grid-template-columns:1fr;
+  }
+  .grouped-visual-images img{
+    height:auto;
+  }
+  .grouped-visual-images img + img{
+    border-left:0;
+    border-top:1px solid #e8ebea;
+  }
+}
+
+
+/* v13 — remove side descriptive copy in medical visuals section */
+.medical-visual-library .section-lead{
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: 28px;
+}
+.medical-visual-library .section-lead > p{
+  display:none;
+}
+
+
+/* v14 — medical visuals shown one-by-one */
+.medical-visual-stack{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:44px;
+}
+.medical-visual-single{
+  width:min(760px,100%);
+  margin:0 auto;
+  border:1px solid #e1e3e1;
+  background:#fff;
+}
+.medical-visual-single img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background:#f7f7f5;
+}
+.medical-visual-single figcaption{
+  padding:14px 16px 16px;
+  border-top:1px solid #e8eae8;
+}
+.medical-visual-single figcaption strong{
+  display:block;
+  margin-bottom:3px;
+  color:#1d2320;
+  font-size:15px;
+}
+.medical-visual-single figcaption span{
+  display:block;
+  color:#737975;
+  font-size:12px;
+}
+@media(max-width:640px){
+  .medical-visual-stack{gap:24px}
+}
