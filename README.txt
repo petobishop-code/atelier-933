@@ -1,13 +1,19 @@
-이번 파일은 '양정역 상가분양' 기존 내부페이지 HTML을 그대로 복제해
-텍스트/SEO/FAQ/관련링크만 교체한 버전입니다.
+애비뉴933 메디컬 특화 홈페이지 개편 시안
 
-즉 구조를 새로 만든 것이 아니라 원본 구조를 그대로 사용했습니다.
+구성
+- index.html : 메디컬 중심으로 개편한 메인 페이지
+- medical.html : 메디컬 전용 상세 페이지
+- styles.css / script.js / assets/
 
-덮어쓸 파일 4개:
-- busanjingu-medical-building.html
-- yangjeong-medical-building.html
-- yeonsan-medical-building.html
-- seomyeon-medical-building.html
+핵심 수정 방향
+1. 전체 상가 소개 → 1층 메디컬 임대·매매 문의 확보 중심
+2. 양정역 직결 → 환자/보호자 실제 이동 동선으로 시각화
+3. 1층 메디컬을 메인, 2층 고메스퀘어를 집객 보조 요소로 배치
+4. 제공 디자인 소스는 참고 자료로 사용하고 사이트 UI/카피는 새롭게 구성
+5. 상단/하단/모바일 CTA 반복
+6. medical.html 별도 상세 페이지 신설
 
-insights.html 카드 코드는 이미 링크가 맞으므로 건드리지 마세요.
-index.html / css/style.css / js / images도 건드리지 마세요.
+주의
+- 상담 폼은 현재 시안용입니다. 기존 사이트의 텔레그램/폼 전송 코드가 있다면 script.js의 requestCall()에 연결하세요.
+- 수치, 주차 무료시간, 지원기간, 임대·매매 조건 등은 최종 계약/제공 자료와 대조 후 게시하세요.
+- 가상 이미지 사용 시 실제 현장 사진과 구분 표기하세요.

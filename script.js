@@ -1,0 +1,1 @@
+function requestCall(e){e.preventDefault();const n=document.getElementById('name').value.trim();const p=document.getElementById('phone').value.trim();if(!n||!p)return false;alert('현재 파일은 디자인 시안입니다. 실제 배포 시 기존 문의 전송 방식에 연결해 주세요.\n\n빠른 상담: 010-9469-8957');return false;}
