@@ -525,3 +525,198 @@ button.nav-cta{
   .modal-head h3{font-size:25px}
   .modal-phone-link{align-items:flex-start;flex-direction:column;gap:3px}
 }
+
+
+/* v10 — reference-inspired hero treatment */
+.premium-header{
+  position:relative;
+  top:auto;
+  z-index:100;
+  background:#fff;
+  border-bottom:0;
+}
+.premium-nav{
+  width:min(1120px,calc(100% - 72px));
+  height:122px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:44px;
+}
+.premium-brand{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  line-height:1;
+}
+.brand-main{
+  font-size:34px;
+  font-weight:950;
+  letter-spacing:-.055em;
+  color:#111516;
+}
+.brand-sub{
+  margin-top:8px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.28em;
+  color:#0f513f;
+}
+.premium-menu{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+.premium-menu a,
+.premium-menu button{
+  border:0;
+  background:transparent;
+  color:#0d4950;
+  font:inherit;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:-.03em;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.premium-menu a span{
+  display:inline-block;
+  margin-left:2px;
+  font-size:12px;
+  transform:translateY(-1px);
+}
+.reserve-link{
+  padding:8px 0!important;
+}
+
+.hero-reference{
+  position:relative;
+  min-height:calc(100vh - 122px);
+  height:820px;
+  overflow:hidden;
+  background:#203845;
+}
+.hero-reference-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 53%;
+}
+.hero-reference-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(10,35,50,.38),rgba(8,25,35,.44)),
+    linear-gradient(90deg,rgba(6,30,42,.18),rgba(6,30,42,.08));
+}
+.hero-reference-copy{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:52%;
+  width:min(920px,calc(100% - 48px));
+  transform:translate(-50%,-50%);
+  color:#fff;
+  text-align:center;
+  text-shadow:0 3px 24px rgba(0,0,0,.26);
+}
+.hero-reference-kicker{
+  margin:0 0 18px;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.hero-reference-copy h1{
+  margin:0;
+  font-size:clamp(54px,6.3vw,86px);
+  line-height:1.05;
+  letter-spacing:-.062em;
+  font-weight:900;
+}
+.hero-reference-copy h1 span,
+.hero-reference-copy h1 strong{
+  display:block;
+}
+.hero-reference-copy h1 span{
+  font-size:.77em;
+  margin-bottom:7px;
+}
+.hero-reference-copy h1 strong{
+  color:#fff;
+}
+.hero-reference-sub{
+  display:inline-block;
+  margin:24px 0 0;
+  padding:10px 18px;
+  border:1px solid rgba(255,255,255,.58);
+  background:rgba(8,41,39,.28);
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.08em;
+  backdrop-filter:blur(5px);
+}
+.hero-reference-disclaimer{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:16px;
+  transform:translateX(-50%);
+  width:calc(100% - 40px);
+  margin:0;
+  color:rgba(255,255,255,.82);
+  text-align:center;
+  font-size:11px;
+}
+
+/* Preserve the two quick-contact cards over the hero like the previous site */
+.floating-actions{
+  z-index:120;
+}
+.float-contact{
+  background:#0f513f!important;
+  color:#fff!important;
+}
+
+/* keep the next content clearly below the hero */
+.statement{border-top:0}
+
+@media(max-width:900px){
+  .premium-nav{
+    width:calc(100% - 34px);
+    height:86px;
+  }
+  .brand-main{font-size:24px}
+  .brand-sub{font-size:9px;margin-top:5px}
+  .premium-menu{gap:20px}
+  .premium-menu a,.premium-menu button{font-size:13px}
+  .hero-reference{
+    min-height:650px;
+    height:calc(100vh - 86px);
+  }
+}
+@media(max-width:680px){
+  .premium-nav{height:74px}
+  .premium-menu a:nth-child(-n+3){display:none}
+  .premium-menu{gap:0}
+  .reserve-link{
+    border:1px solid #0d4950!important;
+    padding:8px 12px!important;
+  }
+  .hero-reference{
+    height:calc(100svh - 74px);
+    min-height:610px;
+  }
+  .hero-reference-img{
+    object-position:center center;
+  }
+  .hero-reference-kicker{font-size:14px}
+  .hero-reference-copy h1{
+    font-size:clamp(42px,12vw,60px);
+  }
+  .hero-reference-copy h1 span{font-size:.67em}
+  .hero-reference-sub{font-size:12px}
+  .floating-actions{display:none}
+}
