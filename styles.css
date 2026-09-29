@@ -1283,3 +1283,83 @@ button.nav-cta{
     max-height:calc(100svh - 24px);
   }
 }
+
+
+/* v16 — simplify visuals and remove clutter */
+.compact-visual-title{
+  margin:0 0 26px;
+  font-size:clamp(30px,4.1vw,46px);
+  line-height:1.18;
+  letter-spacing:-.045em;
+}
+
+.visual-collage-two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+
+.visual-collage-card{
+  margin:0;
+  border:1px solid #e1e3e1;
+  background:#fff;
+}
+
+.visual-collage-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:contain;
+  background:#f7f7f5;
+}
+
+.visual-collage-card figcaption{
+  padding:14px 16px 16px;
+  border-top:1px solid #e8eae8;
+}
+
+.visual-collage-card figcaption strong{
+  display:block;
+  margin-bottom:3px;
+  color:#1d2320;
+  font-size:15px;
+}
+
+.visual-collage-card figcaption span{
+  display:block;
+  color:#737975;
+  font-size:12px;
+}
+
+@media (max-width: 900px){
+  .compact-visual-title{
+    font-size:clamp(28px,7vw,38px);
+    margin-bottom:22px;
+  }
+  .visual-collage-two{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+}
+
+@media (max-width: 560px){
+  .visual-collage-card img{
+    aspect-ratio:auto;
+    height:auto;
+  }
+}
+
+
+/* v17 — mobile 상담신청 버튼 차콜 */
+@media (max-width: 900px){
+  .fixed-bar button{
+    background:#2f3133 !important;
+    color:#ffffff !important;
+    border-top:1px solid #2f3133 !important;
+  }
+  .fixed-bar button:hover,
+  .fixed-bar button:focus{
+    background:#242628 !important;
+  }
+}
