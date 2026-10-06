@@ -1469,3 +1469,76 @@ button.nav-cta{
   .statement-grid{grid-template-columns:1fr !important;gap:24px}
   .single-recommend-visual{max-width:none}
 }
+
+/* 2026-10-06: center alignment for top medical positioning / recommended departments only */
+.statement{
+  padding:82px 0 88px;
+}
+.statement .statement-grid{
+  display:flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px !important;
+  text-align:center;
+}
+.statement .statement-grid > p{
+  margin:0 0 2px;
+}
+.statement .statement-copy{
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+}
+.statement .statement-copy h2{
+  margin:0 auto;
+  text-align:center;
+}
+.statement .statement-visual{
+  width:min(460px,100%);
+  margin:18px auto 0;
+  border:1px solid #e1e3e1;
+  background:#fff;
+}
+.statement .statement-visual img{
+  width:100%;
+  height:auto;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+.medical-visual-library .wrap{
+  text-align:center;
+}
+.medical-visual-library .eyebrow{
+  text-align:center;
+}
+.medical-visual-library .compact-visual-title{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+.medical-visual-library .single-recommend-visual{
+  width:min(460px,100%);
+  max-width:none;
+  margin:0 auto;
+}
+.medical-visual-library .visual-collage-card{
+  width:100%;
+  margin:0 auto;
+}
+.medical-visual-library .visual-collage-card img{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+}
+
+@media(max-width:640px){
+  .statement{padding:68px 0 72px}
+  .statement .statement-visual,
+  .medical-visual-library .single-recommend-visual{
+    width:min(100%,420px);
+  }
+}
