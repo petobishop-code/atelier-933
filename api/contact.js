@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, phone, time } = req.body || {};
+    const { name, phone, time, interestType, dept } = req.body || {};
 
     if (!name || !phone || !time) {
       return res.status(400).json({ ok: false, message: '필수 항목이 누락되었습니다.' });
@@ -35,6 +35,8 @@ export default async function handler(req, res) {
       `성함: ${name}`,
       `연락처: ${phone}`,
       `연락 가능 시간: ${time}`,
+      ...(interestType ? [`관심 유형: ${interestType}`] : []),
+      ...(dept ? [`희망 진료과: ${dept}`] : []),
       `신청 시간: ${koreaTime}`
     ].join('\n');
 
