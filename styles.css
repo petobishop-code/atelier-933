@@ -1695,3 +1695,22 @@ button.nav-cta{
     line-height:1.7;
   }
 }
+
+/* 2026-10-07: parking title matches route section heading */
+.route-parking-copy h3{
+  margin:0;
+  font-family:inherit;
+  font-size:1.5em;
+  line-height:normal;
+  letter-spacing:inherit;
+  font-weight:bold;
+}
+
+@media (max-width:900px){
+  .route-parking-copy h3{
+    font-size:clamp(30px, 7.6vw, 42px) !important;
+    line-height:1.18 !important;
+    letter-spacing:inherit;
+    font-weight:bold;
+  }
+}
