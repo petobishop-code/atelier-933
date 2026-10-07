@@ -1645,3 +1645,53 @@ button.nav-cta{
     padding-top:74px;
   }
 }
+
+
+/* 2026-10-07: mobile route step compact spacing + parking copy */
+.route-parking-copy{
+  margin:4px 0 -8px;
+}
+.route-parking-copy h3{
+  margin:0;
+  font-size:clamp(28px,3.3vw,42px);
+  line-height:1.18;
+  letter-spacing:-.045em;
+  font-weight:900;
+}
+.route-parking-copy p{
+  margin:14px 0 0;
+  color:#656b68;
+  font-size:15px;
+  line-height:1.75;
+}
+
+@media (max-width:560px){
+  .route-steps{
+    grid-template-columns:1fr 1fr !important;
+    margin-bottom:22px !important;
+  }
+  .route-steps > div{
+    min-height:72px !important;
+    padding:12px 13px !important;
+  }
+  .route-steps span{
+    margin-bottom:4px !important;
+    font-size:9px !important;
+  }
+  .route-steps strong{
+    font-size:14px !important;
+    line-height:1.35 !important;
+  }
+  .route-parking-copy{
+    margin:0 0 -6px;
+  }
+  .route-parking-copy h3{
+    font-size:26px;
+    line-height:1.22;
+  }
+  .route-parking-copy p{
+    margin-top:10px;
+    font-size:14px;
+    line-height:1.7;
+  }
+}
