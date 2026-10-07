@@ -1627,3 +1627,21 @@ button.nav-cta{
   .opening-info-head{margin-bottom:24px}
   .opening-info-card-copy{padding:20px 20px 18px}
 }
+
+/* 2026-10-07: mobile top navigation fixed while scrolling */
+@media (max-width:680px){
+  .premium-header{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    z-index:1000 !important;
+    background:#fff !important;
+    border-bottom:1px solid #ececec !important;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+  }
+  main#top{
+    padding-top:74px;
+  }
+}
