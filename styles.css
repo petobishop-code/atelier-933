@@ -1714,3 +1714,15 @@ button.nav-cta{
     font-weight:bold;
   }
 }
+
+/* 2026-10-07: real-space photo size match only */
+.real-space-grid figure{
+  aspect-ratio:3 / 2;
+  overflow:hidden;
+}
+.real-space-grid figure img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
